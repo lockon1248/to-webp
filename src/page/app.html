@@ -1,0 +1,25 @@
+<div class="container">
+  <style>
+    /* 隱藏 sl-dialog 內建的右上角關閉鈕 */
+    sl-dialog::part(close-button) {
+      display: none;
+    }
+  </style>
+  <h1>to-webp</h1>
+  <sl-card class="upload-card">
+    <h2 slot="header">webp圖片轉換工具</h2>
+    <sl-input id="fileName" placeholder="選擇檔案後自動填入"></sl-input>
+    <sl-divider></sl-divider>
+    <sl-button id="selectFile" variant="primary">選擇圖片</sl-button>
+    <input id="fileInput" type="file" accept="image/*" hidden />
+    <sl-divider></sl-divider>
+    <sl-button id="convertBtn" variant="success">轉換成 WebP</sl-button>
+    <sl-divider></sl-divider>
+    <sl-button id="downloadBtn" disabled>下載輸出檔案</sl-button>
+  </sl-card>
+  <sl-dialog class="dialog-width" style="--width: 50vw;">
+    <h3 slot="label">警告</h3>
+    <div id="dialogMessage"></div>
+    <sl-button id="closeDialog" slot="footer" variant="primary">關閉</sl-button>
+  </sl-dialog>
+</div>
