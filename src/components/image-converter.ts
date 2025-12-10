@@ -1,4 +1,5 @@
 import type SlDialog from '@shoelace-style/shoelace/dist/components/dialog/dialog.js'; // Shoelace 對話框型別
+import type SlInput from '@shoelace-style/shoelace/dist/components/input/input.js'; 
 import template from '../page/app.html?raw'; // 匯入外部 HTML 樣板為純字串，方便 IDE 補全且與邏輯分離
 
 export class ImageConverter extends HTMLElement { // 定義自訂元素類別，供瀏覽器註冊
@@ -14,7 +15,7 @@ export class ImageConverter extends HTMLElement { // 定義自訂元素類別，
 
     connectedCallback() {
         const fileInput = this.shadow.querySelector('#fileInput') as HTMLInputElement; // 拿到隱藏的檔案 input，供觸發原生檔案選擇
-        const fileName = this.shadow.querySelector('#fileName') as any; // 取得顯示檔名的欄位，回填使用者所選檔名
+        const fileName = this.shadow.querySelector('#fileName') as SlInput; // 取得顯示檔名的欄位，回填使用者所選檔名
         const btnSelect = this.shadow.querySelector('#selectFile') as HTMLElement; // 自訂的選檔按鈕，提供美化外觀
         const btnConvert = this.shadow.querySelector('#convertBtn') as HTMLElement; // 轉檔按鈕，使用者觸發 WebP 轉換
         const btnDownload = this.shadow.querySelector('#downloadBtn') as HTMLButtonElement; // 下載按鈕，待轉檔完成後啟用

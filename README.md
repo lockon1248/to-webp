@@ -2,6 +2,8 @@
 
 前端小工具：將上傳的圖片轉成 WebP，並提供下載。專案採 Vite + Shoelace，自訂 Web Component（`<image-converter>`）封裝 UI 與邏輯，模板來源在 `src/page/app.html`，邏輯在 `src/components/image-converter.ts`。
 
+線上體驗：https://to-webp-inky.vercel.app/
+
 ## 開發
 - 安裝：`npm install`
 - 開發伺服器：`npm run dev`（Vite，預設 http://localhost:5173）
@@ -23,4 +25,3 @@
 ## 客製化提示
 - 修改對話框：`src/page/app.html` 內的 `sl-dialog`，提示文字由 `image-converter.ts` 的 `showDialog()` 動態填入。
 - 覆寫按鈕色：同檔案內的 `<style>` 使用 `::part(base)` 針對 Shoelace 按鈕覆寫。
-
